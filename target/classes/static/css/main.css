@@ -1,0 +1,22 @@
+.client-list {
+    list-style-type: none;
+}
+
+.client-list-outer {
+    position: static;
+    width: 300px;
+    border-color: transparent;
+    margin-left: 0;
+    height: 300px;
+
+}
+
+.client-list-header {
+    text-align: center;
+    background-color: aquamarine;
+}
+
+li {
+    padding: 2px;
+}
+

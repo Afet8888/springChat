@@ -3,12 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.5/sockjs.min.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
     <script src="js/sockethandler.js"></script>
     <script src="js/main.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+    <link href="css/main.css" type="text/css" rel="stylesheet"/>
     <title>Title</title>
 </head>
 <body>
-        <input type="text" id="minput" name="message" placeholder="type...">
-        <input type="button" value="send" onclick="socketHandler.sendFromMessageInput()">
+        <div class="client-list-outer">
+            <div class="client-list-header list-group-item">
+                <p>Users</p>
+            </div>
+            <ul id="clientList" class="client-list list-group"></ul>
+        </div>
+<div class="input-group mb-3">
+    <input type="text" id="minput" class="form-control" placeholder="type...">
+    <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" onclick="socketHandler.sendFromMessageInput()"></button>
+
+    </div>
+
+</div>
+<p id="message"></p>
+
 </body>
 </html>

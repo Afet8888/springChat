@@ -14,16 +14,13 @@ import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry
 @EnableWebSocket
 public class WebScoketConfig implements WebSocketConfigurer {
 
-
+@Autowired
+MyHandler myHandler;
 
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry webSocketHandlerRegistry) {
-        webSocketHandlerRegistry.addHandler(getHandler(),"/chat").setAllowedOrigins("*")
+        webSocketHandlerRegistry.addHandler(myHandler,"/chat").setAllowedOrigins("*")
         .withSockJS();
     }
 
-    @Bean
-    public WebSocketHandler getHandler(){
-        return  new MyHandler();
-    }
-}
+   }
